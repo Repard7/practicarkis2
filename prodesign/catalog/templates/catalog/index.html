@@ -6,15 +6,34 @@
     {% if latest_completed_request_list %}
     <ul style="list-style-type: none; padding: 0;">
         {% for request in latest_completed_request_list %}
-        <li style="border: 1px solid black; margin-bottom: 20px; padding: 15px; border-radius: 5px;">
-            <h3>{{ request.title }}</h3>
-            <p><strong>Описание:</strong> {{ request.description }}</p>
-            <p><strong>Категория:</strong> {{ request.category }}</p>
-            <p><strong>Дата публикации:</strong> {{ request.pub_date }}</p>
-            <p><strong>Автор:</strong> {{ request.user.get_full_name }}</p>
-            {% if request.image %}
-                <img src="{{ request.image.url }}" alt="Изображение заявки" style="height: 200px; width: 200px">
-            {% endif %}
+        <li style="border: 1px solid black; margin-bottom: 20px; padding: 15px; border-radius: 5px; display: flex; align-items: flex-start; gap: 50px;">
+            <div style="flex: 1;">
+                <h3>{{ request.title }}</h3>
+                <p><strong>Описание:</strong> {{ request.description }}</p>
+                <p><strong>Категория:</strong> {{ request.category }}</p>
+                <p><strong>Дата публикации:</strong> {{ request.pub_date }}</p>
+                <p><strong>Автор:</strong> {{ request.user.get_full_name }}</p>
+                <p><strong>Статус:</strong> {{ request.status }}</p>
+
+                {% if request.image %}
+                    <p><strong>Изначальный дизайн:</strong></p>
+                    <img src="{{ request.image.url }}" alt="Изображение дизайна" style="height: 200px; width: 200px">
+                {% endif %}
+            </div>
+
+            <div style="flex: 1;">
+                {% if request.status.name == "Done" or request.status.name == "In_work" %}
+                    {% if request.completed_image %}
+                        <p><strong>Готовый дизайн:</strong></p>
+                        <img src="{{ request.completed_image.url }}" alt="Изображение готового дизайна" style="height: 200px; width: 200px">
+                    {% endif %}
+
+                    {% if request.worker_comment %}
+                        <p><strong>Комментарий дизайнера:</strong></p>
+                        <p>{{ request.worker_comment }}</p>
+                    {% endif %}
+                {% endif %}
+            </div>
         </li>
         {% endfor %}
     </ul>

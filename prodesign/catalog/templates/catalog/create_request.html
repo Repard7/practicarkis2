@@ -1,4 +1,3 @@
-<!-- create_request.html -->
 {% extends 'catalog/base_template.html' %}
 {% block title %} Создание заявки {% endblock %}
 {% block content %}
@@ -15,19 +14,30 @@
                 {% endfor %}
                 {% for error in form.non_field_errors %}
                     <p>{{ error }}</p>
-                {% endfor %}
+                    {% endfor %}
             </div>
         {% endif %}
 
-        {% for field in form %}
         <div class="form-group">
-            <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
-            {{ field }}
-            {% if field.help_text %}
-                <small>{{ field.help_text }}</small>
-            {% endif %}
+            <label for="id_title">Заголовок заявки:</label>
+            {{ form.title }}
         </div>
-        {% endfor %}
+
+        <div class="form-group">
+            <label for="id_description">Описание заявки:</label>
+            {{ form.description }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_image">Изображение дизайна:</label>
+            {{ form.image }}
+            <small>Допустимые форматы: JPG, JPEG, PNG, BMP. Максимальный размер: 2MB</small>
+        </div>
+
+        <div class="form-group">
+            <label for="id_category">Категории:</label>
+            {{ form.category }}
+        </div>
 
         <button type="submit">Создать заявку</button>
     </form>

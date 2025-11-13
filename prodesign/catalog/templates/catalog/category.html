@@ -9,14 +9,14 @@
             {% for category in list_categories %}
                 <li>
                     {{category.name}}
-                    <a href="{% url 'delete_category' category.pk %}" onclick="return confirm('Вы уверены, что хотите удалить эту заявку?')">Удалить</a>
+                    <a href="{% url 'delete_category' category.pk %}" onclick="return confirm('Вы уверены, что хотите удалить эту категорию?')">Удалить</a>
                 </li>
             {% endfor %}
         </ul>
         <div class="form-group">
             <label for="category">Название категории:</label>
-            <input type="text" id="category" name="category" required>
+            <input type="text" id="category" name="category" class="form-control" required>
         </div>
-        <button type="submit">Добавить категорию</button>
+        <button type="submit" class="btn btn-primary">Добавить категорию</button>
     </form>
 {% endblock %}

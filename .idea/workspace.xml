@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Сделал механику проверки расширения и размера изображений">
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/forms.py" afterDir="false" />
+    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Перенес все формы в forms.py">
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/base_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/category.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/create_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/create_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +23,7 @@
       <list>
         <option value="HTML File" />
         <option value="Python Script" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -54,6 +58,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "D:/РабочийСтол/Все+Obsidian+git/Content/LearningTTIT/Практика_Django/ProDesign",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +69,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\РабочийСтол\Все+Obsidian+git\Content\LearningTTIT\Практика_Django\ProDesign\prodesign\catalog" />
       <recent name="D:\РабочийСтол\Все+Obsidian+git\Content\LearningTTIT\Практика_Django\ProDesign\prodesign\catalog\templates\catalog" />
       <recent name="D:\РабочийСтол\Все+Obsidian+git\Content\LearningTTIT\Практика_Django\ProDesign\prodesign" />
     </key>
@@ -89,7 +95,7 @@
       <workItem from="1762963430855" duration="3113000" />
       <workItem from="1762966671526" duration="4237000" />
       <workItem from="1763002086042" duration="894000" />
-      <workItem from="1763003002756" duration="21238000" />
+      <workItem from="1763003002756" duration="22938000" />
     </task>
     <task id="LOCAL-00001" summary="Базовый коммит">
       <option name="closed" value="true" />
@@ -131,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763026962338</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Перенес все формы в forms.py">
+      <option name="closed" value="true" />
+      <created>1763027602331</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763027602331</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +168,7 @@
     <MESSAGE value="Разобрался с сменой статусов и всего по немножку" />
     <MESSAGE value="Сделал механику подтверждения удаления" />
     <MESSAGE value="Сделал механику проверки расширения и размера изображений" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал механику проверки расширения и размера изображений" />
+    <MESSAGE value="Перенес все формы в forms.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Перенес все формы в forms.py" />
   </component>
 </project>

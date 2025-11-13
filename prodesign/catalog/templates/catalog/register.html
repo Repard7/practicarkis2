@@ -1,10 +1,9 @@
-<!-- register.html -->
 {% extends 'catalog/base_template.html' %}
 {% block title %} Регистрация {% endblock %}
 {% block content %}
 
     {% if form.errors %}
-        <div class="error" style="color: red; margin-bottom: 20px;">
+        <div class="error">
             {% for field in form %}
                 {% for error in field.errors %}
                     <p>{{ error }}</p>
@@ -19,15 +18,46 @@
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
-        {% for field in form %}
         <div class="form-group">
-            <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
-            {{ field }}
-            {% if field.help_text %}
-                <small>{{ field.help_text }}</small>
-            {% endif %}
+            <label for="id_last_name">Фамилия:</label>
+            {{ form.last_name }}
         </div>
-        {% endfor %}
+
+        <div class="form-group">
+            <label for="id_first_name">Имя:</label>
+            {{ form.first_name }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_patronymic">Отчество:</label>
+            {{ form.patronymic }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_username">Имя пользователя:</label>
+            {{ form.username }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_email">Email:</label>
+            {{ form.email }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_password1">Пароль:</label>
+            {{ form.password1 }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_password2">Подтвердите пароль:</label>
+            {{ form.password2 }}
+        </div>
+
+        <div class="form-group">
+            <label for="id_is_moderator">
+                {{ form.is_moderator }} Пользователь - модератор?
+            </label>
+        </div>
 
         <button type="submit">Зарегистрироваться</button>
     </form>
