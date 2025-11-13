@@ -17,8 +17,6 @@
     <div style="display: flex; gap: 50px;">
         <div style="border: 1px solid; padding: 20px; border-radius: 5px;">
             <h3>Изменить статус</h3>
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
 
                 {% if error %}
                     <div style="color: red; margin-bottom: 20px;">
@@ -26,25 +24,51 @@
                     </div>
                 {% endif %}
 
+                {% if form.errors %}
+                    <div style="color: red; margin-bottom: 20px;">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <p>{{ field.label }}: {{ error }}</p>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
                 <div class="form-group">
+
                     {%if changeable_request.status.name == "New"%}
-                        <div>
-                            <label for="worker_comment">Напишите комментарий к обновленному дизайну:</label>
-                            <input type="text" id="worker_comment" name="worker_comment" required>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.worker_comment.id_for_label }}">{{ form.worker_comment.label }}:</label>
+                            {{ form.worker_comment }}
+                            {% if form.worker_comment.help_text %}
+                                <small>{{ form.worker_comment.help_text }}</small>
+                            {% endif %}
                         </div>
-                        <div>
-                            <label for="completed_image">Изображение обновленного дизайна:</label>
-                            <input type="file" id="completed_image" name="completed_image" accept="completed_image/*" required>
-                            <small>Допустимые форматы: JPG, JPEG, PNG, BMP. Максимальный размер: 2MB</small>
-                        </div>
+
                         <button type="submit" name="edit_status_new">Изменить на in_work</button>
-                        <button type="submit" name="edit_status_in_work">Изменить на done</button>
                     {%else%}
                         <button type="submit" disabled>Изменить на in_work</button>
+                    {% endif %}
+                    </form>
+
+                    {%if changeable_request.status.name == "New"%}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.completed_image.id_for_label }}">{{ form.completed_image.label }}:</label>
+                            {{ form.completed_image }}
+                            {% if form.completed_image.help_text %}
+                                <small>{{ form.completed_image.help_text }}</small>
+                            {% endif %}
+                        </div>
+                        <button type="submit" name="edit_status_in_work">Изменить на done</button>
+                    {%else%}
                         <button type="submit" disabled>Изменить на done</button>
                     {% endif %}
+                    </form>
                 </div>
-            </form>
         </div>
 
         <div style="border: 1px solid; padding: 20px; border-radius: 5px;">
@@ -52,14 +76,11 @@
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="category">Категории:</label>
-                    <select id="category" name="category" style="margin: 10px 0; padding: 5px;">
-                        {% for category in list_categories %}
-                            <option value="{{ category.id }}" {% if category.id == changeable_request.category.id %}selected{% endif %}>
-                                {{ category }}
-                            </option>
-                        {% endfor %}
-                    </select>
+                    <label for="{{ form.category.id_for_label }}">{{ form.category.label }}:</label>
+                    {{ form.category }}
+                    {% if form.category.help_text %}
+                        <small>{{ form.category.help_text }}</small>
+                    {% endif %}
                 </div>
                 <button type="submit" name="edit_category" style="padding: 8px 16px; border: none; border-radius: 4px;">
                     Изменить категорию

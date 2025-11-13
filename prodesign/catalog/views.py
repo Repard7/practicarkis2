@@ -124,6 +124,7 @@ def deleting_request_view(request, pk): #post страница с подтвер
     request_to_delete.delete()
     return redirect('user_requests')
 
+
 @login_required
 @permission_required('catalog.moderator_access')
 def edit_request_view(request, pk):
@@ -131,7 +132,6 @@ def edit_request_view(request, pk):
     list_categories = Category.objects.all()
 
     if request.method == 'POST':
-
         if 'edit_category' in request.POST:
             category_id = request.POST.get('category')
             changeable_request.category = Category.objects.get(id=category_id)
@@ -139,12 +139,37 @@ def edit_request_view(request, pk):
             return redirect('admin_panel')
 
         elif 'edit_status_new' in request.POST or 'edit_status_in_work' in request.POST:
+            # Для изменения статуса валидируем только нужные поля вручную
             worker_comment = request.POST.get('worker_comment')
             completed_image = request.FILES.get('completed_image')
 
-            if completed_image:
+            # Валидация для изменения на In_work
+            if 'edit_status_new' in request.POST:
+                if not worker_comment:
+                    return render(request, 'catalog/edit_request.html', {
+                        'changeable_request': changeable_request,
+                        'list_categories': list_categories,
+                        'error': 'Необходимо указать комментарий'
+                    })
+                changeable_request.worker_comment = worker_comment
+                changeable_request.status = Status.objects.get(name="In_work")
+                changeable_request.save()
+                return redirect('admin_panel')
+
+            # Валидация для изменения на Done
+            elif 'edit_status_in_work' in request.POST:
+                if not completed_image:
+                    return render(request, 'catalog/edit_request.html', {
+                        'changeable_request': changeable_request,
+                        'list_categories': list_categories,
+                        'error': 'Необходимо загрузить изображение'
+                    })
                 try:
                     validate_image_file(completed_image)
+                    changeable_request.completed_image = completed_image
+                    changeable_request.status = Status.objects.get(name="Done")
+                    changeable_request.save()
+                    return redirect('admin_panel')
                 except ValidationError as e:
                     return render(request, 'catalog/edit_request.html', {
                         'changeable_request': changeable_request,
@@ -152,21 +177,12 @@ def edit_request_view(request, pk):
                         'error': str(e)
                     })
 
-            if 'edit_status_new' in request.POST:
-                changeable_request.status = Status.objects.get(name="In_work")
-            elif 'edit_status_in_work' in request.POST:
-                changeable_request.status = Status.objects.get(name="Done")
-
-            changeable_request.worker_comment = worker_comment
-            if completed_image:
-                changeable_request.completed_image = completed_image
-
-            changeable_request.save()
-            return redirect('admin_panel')
-
+    # GET запрос
+    form = RequestEditForm(instance=changeable_request)
     return render(request, 'catalog/edit_request.html', {
         'changeable_request': changeable_request,
-        'list_categories': list_categories
+        'list_categories': list_categories,
+        'form': form
     })
 
 def validate_image_file(file):
