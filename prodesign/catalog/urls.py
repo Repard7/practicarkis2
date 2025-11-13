@@ -13,9 +13,10 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('request/delete/<int:pk>/', views.deleting_request_view, name='delete'),
     path('request/create/', views.creating_request_view, name='create'),
+    path('profile', views.profile_view, name='profile'),
 
     # Только админ
-    path('admin_panel/', views.admin_panel_include_all_requests_view, name='admin_panel'),
+    path('superadmin/', views.admin_panel_include_all_requests_view, name='admin_panel'),
     path('request/edit/<int:pk>/', views.edit_request_view, name='edit_request'),
     path('category', views.category_view, name='category'),
     path('category/<int:pk>', views.deleting_category_view, name='delete_category'),
