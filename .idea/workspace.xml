@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Сделал механику подтверждения удаления">
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/category.html" afterDir="false" />
+    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Сделал механику проверки расширения и размера изображений">
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/base_template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/create_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/create_request.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/edit_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/edit_request.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -91,7 +89,7 @@
       <workItem from="1762963430855" duration="3113000" />
       <workItem from="1762966671526" duration="4237000" />
       <workItem from="1763002086042" duration="894000" />
-      <workItem from="1763003002756" duration="20580000" />
+      <workItem from="1763003002756" duration="21238000" />
     </task>
     <task id="LOCAL-00001" summary="Базовый коммит">
       <option name="closed" value="true" />
@@ -125,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763023320812</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Сделал механику проверки расширения и размера изображений">
+      <option name="closed" value="true" />
+      <created>1763026962338</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763026962338</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +153,7 @@
     <MESSAGE value="Средне все сделал" />
     <MESSAGE value="Разобрался с сменой статусов и всего по немножку" />
     <MESSAGE value="Сделал механику подтверждения удаления" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал механику подтверждения удаления" />
+    <MESSAGE value="Сделал механику проверки расширения и размера изображений" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал механику проверки расширения и размера изображений" />
   </component>
 </project>
