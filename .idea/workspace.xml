@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Добавил профиль и изменил ссылку на admin_panel по тз на superadmin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/index.html" afterDir="false" />
+    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Добавил счетчик заявок в работе на главную">
+      <change afterPath="$PROJECT_DIR$/gitignore.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <workItem from="1762963430855" duration="3113000" />
       <workItem from="1762966671526" duration="4237000" />
       <workItem from="1763002086042" duration="894000" />
-      <workItem from="1763003002756" duration="23751000" />
+      <workItem from="1763003002756" duration="25463000" />
     </task>
     <task id="LOCAL-00001" summary="Базовый коммит">
       <option name="closed" value="true" />
@@ -156,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763029544012</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Добавил счетчик заявок в работе на главную">
+      <option name="closed" value="true" />
+      <created>1763030043503</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763030043503</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +190,7 @@
     <MESSAGE value="Перенес все формы в forms.py" />
     <MESSAGE value="Подтянул стили" />
     <MESSAGE value="Добавил профиль и изменил ссылку на admin_panel по тз на superadmin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил профиль и изменил ссылку на admin_panel по тз на superadmin" />
+    <MESSAGE value="Добавил счетчик заявок в работе на главную" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил счетчик заявок в работе на главную" />
   </component>
 </project>
