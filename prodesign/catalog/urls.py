@@ -17,5 +17,6 @@ urlpatterns = [
     # Только админ
     path('admin_panel/', views.admin_panel_include_all_requests_view, name='admin_panel'),
     path('request/edit/<int:pk>/', views.edit_request_view, name='edit_request'),
-
+    path('category', views.category_view, name='category'),
+    path('category/<int:pk>', views.deleting_category_view, name='delete_category'),
 ]

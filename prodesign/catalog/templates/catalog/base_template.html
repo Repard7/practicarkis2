@@ -38,6 +38,7 @@
         {% endif %}
         {% if user.is_authenticated and perms.catalog.moderator_access %}
              <a href="{% url 'admin_panel' %}">Админ-панель</a>
+            <a href="{% url 'category' %}">Категории</a>
         {% endif %}
 
         <div>

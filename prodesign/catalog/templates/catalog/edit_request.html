@@ -19,6 +19,13 @@
             <h3>Изменить статус</h3>
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
+
+                {% if error %}
+                    <div style="color: red; margin-bottom: 20px;">
+                        {{ error }}
+                    </div>
+                {% endif %}
+
                 <div class="form-group">
                     {%if changeable_request.status.name == "New"%}
                         <div>
@@ -28,6 +35,7 @@
                         <div>
                             <label for="completed_image">Изображение обновленного дизайна:</label>
                             <input type="file" id="completed_image" name="completed_image" accept="completed_image/*" required>
+                            <small>Допустимые форматы: JPG, JPEG, PNG, BMP. Максимальный размер: 2MB</small>
                         </div>
                         <button type="submit" name="edit_status_new">Изменить на in_work</button>
                         <button type="submit" name="edit_status_in_work">Изменить на done</button>

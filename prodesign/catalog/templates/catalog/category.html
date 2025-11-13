@@ -1,0 +1,22 @@
+{% extends 'catalog/base_template.html' %}
+{% block title %} Создание категории {% endblock %}
+{% block content %}
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <b>Все категории:</b>
+        <ul style="list-style-type: none">
+            {% for category in list_categories %}
+                <li>
+                    {{category.name}}
+                    <a href="{% url 'delete_category' category.pk %}" onclick="return confirm('Вы уверены, что хотите удалить эту заявку?')">Удалить</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="form-group">
+            <label for="category">Название категории:</label>
+            <input type="text" id="category" name="category" required>
+        </div>
+        <button type="submit">Добавить категорию</button>
+    </form>
+{% endblock %}
