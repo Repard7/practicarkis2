@@ -23,7 +23,7 @@
                         {% endif %}
                         <div>
                             {% if request.status.name == "New" %}
-                                <a href="{% url 'delete' request.pk %}">Удалить</a>
+                                <a href="{% url 'delete' request.pk %}" onclick="return confirm('Вы уверены, что хотите удалить эту заявку?')">Удалить</a>
                             {% endif %}
                         </div>
                     </div>

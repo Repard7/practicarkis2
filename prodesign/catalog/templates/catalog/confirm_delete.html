@@ -1,0 +1,20 @@
+{% extends 'catalog/base_template.html' %}
+{% block title %} Подтверждение удаления {% endblock %}
+{% block content %}
+<div style="max-width: 500px; margin: 50px auto; text-align: center;">
+    <h2>Подтверждение удаления</h2>
+    <p>Вы уверены, что хотите удалить заявку "{{ request_to_delete.title }}"?</p>
+    
+    <div style="margin-top: 30px;">
+        <form method="POST" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" style="background-color: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-right: 10px;">
+                Да, удалить
+            </button>
+        </form>
+        <a href="{% url 'user_requests' %}" style="background-color: #6c757d; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+            Отмена
+        </a>
+    </div>
+</div>
+{% endblock %}

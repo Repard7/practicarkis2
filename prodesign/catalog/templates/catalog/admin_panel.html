@@ -24,7 +24,7 @@
                         {% endif %}
                         <div>
                             <a href="{% url 'edit_request' request.pk %}">Редактировать</a>
-                            <a href="{% url 'delete' request.pk %}">Удалить</a>
+                            <a href="{% url 'delete' request.pk %}" onclick="return confirm('Вы уверены, что хотите удалить эту заявку?')">Удалить</a>
                         </div>
                     </div>
                     <div style="align-items: center">
