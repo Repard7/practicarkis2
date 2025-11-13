@@ -13,7 +13,6 @@
             <p><strong>Дата публикации:</strong> {{ request.pub_date }}</p>
             <p><strong>Автор:</strong> {{ request.user.get_full_name }}</p>
             {% if request.image %}
-                <p><strong>Дизайн:</strong></p>
                 <img src="{{ request.image.url }}" alt="Изображение заявки" style="height: 200px; width: 200px">
             {% endif %}
         </li>

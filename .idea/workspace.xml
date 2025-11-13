@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Базовый коммит">
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/admin_panel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/base_template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/create_request.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/edit_request.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/user_request_list.html" afterDir="false" />
+    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Средне все сделал">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/admin_panel.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/admin_panel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/edit_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/edit_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/user_request_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/user_request_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +89,7 @@
       <workItem from="1762963430855" duration="3113000" />
       <workItem from="1762966671526" duration="4237000" />
       <workItem from="1763002086042" duration="894000" />
-      <workItem from="1763003002756" duration="12783000" />
+      <workItem from="1763003002756" duration="16659000" />
     </task>
     <task id="LOCAL-00001" summary="Базовый коммит">
       <option name="closed" value="true" />
@@ -105,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762944512138</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Средне все сделал">
+      <option name="closed" value="true" />
+      <created>1763018972365</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763018972365</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +126,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Базовый коммит" />
-    <option name="LAST_COMMIT_MESSAGE" value="Базовый коммит" />
+    <MESSAGE value="Средне все сделал" />
+    <option name="LAST_COMMIT_MESSAGE" value="Средне все сделал" />
   </component>
 </project>
