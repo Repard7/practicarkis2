@@ -59,7 +59,21 @@
             </label>
         </div>
 
-        <button type="submit">Зарегистрироваться</button>
+        <div class="form-group">
+            <label for="id_personal_data_agreement" style="font-weight: normal;">
+                {{ form.personal_data_agreement }}
+                <strong>Я согласен на обработку персональных данных</strong>
+            </label>
+            {% if form.personal_data_agreement.errors %}
+                <div class="error" style="color: red; margin-top: 5px;">
+                    {% for error in form.personal_data_agreement.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
     </form>
-    <p><a href="{% url 'login' %}">Уже есть аккаунт? Войдите</a></p>
+    <p style="margin-top: 20px;"><a href="{% url 'login' %}">Уже есть аккаунт? Войдите</a></p>
 {% endblock %}

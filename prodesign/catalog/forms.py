@@ -1,8 +1,8 @@
-
+# forms.py
+import re
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
-import os
+from django.contrib.auth.forms import UserCreationForm
 from catalog.models import AdvUser, Request, Category
 
 
@@ -35,11 +35,18 @@ class CustomUserCreationForm(UserCreationForm):
         label='Пользователь - модератор?',
         widget=forms.CheckboxInput(attrs={'class': 'form-check-input'})
     )
+    personal_data_agreement = forms.BooleanField(
+        required=True,
+        label='Я согласен на обработку персональных данных',
+        widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        error_messages={'required': 'Вы должны согласиться на обработку персональных данных'}
+    )
 
     class Meta:
         model = AdvUser
         fields = (
-        'last_name', 'first_name', 'patronymic', 'username', 'email', 'password1', 'password2', 'is_moderator')
+        'last_name', 'first_name', 'patronymic', 'username', 'email', 'password1', 'password2', 'is_moderator',
+        'personal_data_agreement')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -47,12 +54,56 @@ class CustomUserCreationForm(UserCreationForm):
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
 
+    def clean_last_name(self):
+
+        last_name = self.cleaned_data.get('last_name')
+        if not re.match(r'^[а-яА-ЯёЁ\s\-]+$', last_name):
+            raise ValidationError('Фамилия должна содержать только кириллические буквы, пробелы и дефис')
+        return last_name
+
+    def clean_first_name(self):
+
+        first_name = self.cleaned_data.get('first_name')
+        if not re.match(r'^[а-яА-ЯёЁ\s\-]+$', first_name):
+            raise ValidationError('Имя должно содержать только кириллические буквы, пробелы и дефис')
+        return first_name
+
+    def clean_patronymic(self):
+
+        patronymic = self.cleaned_data.get('patronymic')
+        if not re.match(r'^[а-яА-ЯёЁ\s\-]+$', patronymic):
+            raise ValidationError('Отчество должно содержать только кириллические буквы, пробелы и дефис')
+        return patronymic
+
+    def clean_username(self):
+
+        username = self.cleaned_data.get('username')
+
+
+        if not re.match(r'^[a-zA-Z\-]+$', username):
+            raise ValidationError('Логин должен содержать только латинские буквы и дефис')
+
+
+        if AdvUser.objects.filter(username=username).exists():
+            raise ValidationError('Пользователь с таким логином уже существует')
+
+        return username
+
     def clean_email(self):
+        """Валидация email - валидный формат и уникальность"""
         email = self.cleaned_data.get('email')
+
+
         if AdvUser.objects.filter(email=email).exists():
             raise ValidationError('Пользователь с таким email уже существует')
         return email
 
+    def clean_personal_data_agreement(self):
+        """Валидация согласия на обработку персональных данных"""
+        agreement = self.cleaned_data.get('personal_data_agreement')
+        if not agreement:
+            raise ValidationError('Вы должны согласиться на обработку персональных данных')
+        return agreement
 
 class RequestCreationForm(forms.ModelForm):
     description = forms.CharField(
