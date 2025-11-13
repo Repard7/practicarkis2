@@ -10,7 +10,6 @@ from .forms import CustomUserCreationForm, RequestCreationForm, RequestEditForm,
 
 from catalog.models import Request, AdvUser, Category, Status
 
-#Еще нужно будет разобраться с правами доступа через permission и деконструкторы
 def index_view(request): #get Главная страничка с 4 выполненными заявками пользователя
     try:
         in_work_status = Status.objects.get(name="In_work")
@@ -46,11 +45,11 @@ def register_view(request): #get post Страница с формой реги�
         if form.is_valid():
             user = form.save(commit=False)
 
-            # Устанавливаем пароль
+
             user.set_password(form.cleaned_data['password1'])
             user.save()
 
-            # Добавляем права модератора если нужно
+
             if form.cleaned_data.get('is_moderator'):
                 permission = Permission.objects.get(codename='moderator_access')
                 user.user_permissions.add(permission)
@@ -100,7 +99,7 @@ def creating_request_view(request): #get post Страница с формой �
 @login_required
 @permission_required('catalog.moderator_access')
 def category_view(request):
-    """Страница с формой создания категории"""
+
     if request.method == 'POST':
         category_name = request.POST.get('category')
 
@@ -128,24 +127,21 @@ def deleting_request_view(request, pk): #post страница с подтвер
 @login_required
 @permission_required('catalog.moderator_access')
 def edit_request_view(request, pk):
-    """Страница редактирования заявки для модераторов"""
     changeable_request = get_object_or_404(Request, pk=pk)
     list_categories = Category.objects.all()
 
     if request.method == 'POST':
-        # Обработка изменения категории
+
         if 'edit_category' in request.POST:
             category_id = request.POST.get('category')
             changeable_request.category = Category.objects.get(id=category_id)
             changeable_request.save()
             return redirect('admin_panel')
 
-        # Обработка изменения статуса
         elif 'edit_status_new' in request.POST or 'edit_status_in_work' in request.POST:
             worker_comment = request.POST.get('worker_comment')
             completed_image = request.FILES.get('completed_image')
 
-            # Валидация изображения
             if completed_image:
                 try:
                     validate_image_file(completed_image)
@@ -156,13 +152,11 @@ def edit_request_view(request, pk):
                         'error': str(e)
                     })
 
-            # Обновление статуса
             if 'edit_status_new' in request.POST:
                 changeable_request.status = Status.objects.get(name="In_work")
             elif 'edit_status_in_work' in request.POST:
                 changeable_request.status = Status.objects.get(name="Done")
 
-            # Сохранение комментария и изображения
             changeable_request.worker_comment = worker_comment
             if completed_image:
                 changeable_request.completed_image = completed_image

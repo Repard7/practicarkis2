@@ -99,7 +99,6 @@ class CustomUserCreationForm(UserCreationForm):
         return email
 
     def clean_personal_data_agreement(self):
-        """Валидация согласия на обработку персональных данных"""
         agreement = self.cleaned_data.get('personal_data_agreement')
         if not agreement:
             raise ValidationError('Вы должны согласиться на обработку персональных данных')
