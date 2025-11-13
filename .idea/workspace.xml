@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ProDesign.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/urls.py" afterDir="false" />
+    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Базовый коммит">
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/admin_panel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/base_template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/create_request.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/edit_request.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/user_request_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prodesign/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +32,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Repard7&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Repard7/practicarkis2.git&quot;,
+    &quot;accountId&quot;: &quot;6a712a97-7f17-47fa-ab32-fb978e9e4c17&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -52,6 +68,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\РабочийСтол\Все+Obsidian+git\Content\LearningTTIT\Практика_Django\ProDesign\prodesign\catalog\templates\catalog" />
+      <recent name="D:\РабочийСтол\Все+Obsidian+git\Content\LearningTTIT\Практика_Django\ProDesign\prodesign" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,11 +91,39 @@
       <option name="presentableId" value="Default" />
       <updated>1762942298708</updated>
       <workItem from="1762942299847" duration="1449000" />
-      <workItem from="1762943795962" duration="628000" />
+      <workItem from="1762943795962" duration="3705000" />
+      <workItem from="1762963430855" duration="3113000" />
+      <workItem from="1762966671526" duration="4237000" />
+      <workItem from="1763002086042" duration="894000" />
+      <workItem from="1763003002756" duration="12783000" />
     </task>
+    <task id="LOCAL-00001" summary="Базовый коммит">
+      <option name="closed" value="true" />
+      <created>1762944512138</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762944512138</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Базовый коммит" />
+    <option name="LAST_COMMIT_MESSAGE" value="Базовый коммит" />
   </component>
 </project>

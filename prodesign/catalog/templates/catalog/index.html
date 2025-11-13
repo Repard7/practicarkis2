@@ -1,0 +1,25 @@
+{% extends 'catalog/base_template.html' %}
+{% block title %} Главная {% endblock %}
+{% block content %}
+    <h1>Последние четыре выполненные заявки</h1>
+
+    {% if latest_completed_request_list %}
+    <ul style="list-style-type: none; padding: 0;">
+        {% for request in latest_completed_request_list %}
+        <li style="border: 1px solid black; margin-bottom: 20px; padding: 15px; border-radius: 5px;">
+            <h3>{{ request.title }}</h3>
+            <p><strong>Описание:</strong> {{ request.description }}</p>
+            <p><strong>Категория:</strong> {{ request.category }}</p>
+            <p><strong>Дата публикации:</strong> {{ request.pub_date }}</p>
+            <p><strong>Автор:</strong> {{ request.user.get_full_name }}</p>
+            {% if request.image %}
+                <p><strong>Дизайн:</strong></p>
+                <img src="{{ request.image.url }}" alt="Изображение заявки" style="height: 200px; width: 200px">
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>Нет выполненных заявок!</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'catalog/base_template.html' %}
+{% block title %} Ваши заявки {% endblock %}
+{% block content %}
+    {% if request_list %}
+    <ul style="list-style-type: none">
+        {% for request in request_list %}
+                <li style="border-width: 1px; border-color: black; border-style: solid; margin-bottom: 20px">
+                    {% if request.title %}
+                        <p>Название: {{ request.title }}</p>
+                    {% endif %}
+                    {% if request.description %}
+                        <p>Описание: {{ request.description }}</p>
+                    {% endif %}
+                    {% if request.image %}
+                        <p>Дизайн:</p>
+                        <img src="{{ request.image.url }}" alt="Изображение поста" style="height: 200px; width: 200px" >
+                    {% endif %}
+                    {% if request.category %}
+                        <p>Категория: {{ request.category }}</p>
+                    {% endif %}
+                    {% if request.category %}
+                        <p>Статус: {{ request.category }}</p>
+                    {% endif %}
+                    <a href="{% url 'delete' request.pk %}">Удалить</a>
+                </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>
+            У вас нет заявок!
+        </p>
+    {% endif %}
+{% endblock %}

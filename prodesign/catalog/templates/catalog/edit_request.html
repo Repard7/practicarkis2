@@ -1,0 +1,65 @@
+{% extends 'catalog/base_template.html' %}
+{% block title %} Редактирование заявки {% endblock %}
+{% block content %}
+
+    <div style="margin-bottom: 30px;">
+        <h3>Текущая информация:</h3>
+        <p><strong>Название:</strong> {{ changeable_request.title }}</p>
+        <p><strong>Описание:</strong> {{ changeable_request.description }}</p>
+        <p><strong>Текущая категория:</strong> {{ changeable_request.category }}</p>
+        <p><strong>Текущий статус:</strong> {{ changeable_request.status }}</p>
+        {% if changeable_request.image %}
+            <p><strong>Изображение:</strong></p>
+            <img src="{{ changeable_request.image.url }}" alt="Изображение заявки" style="height: 200px; width: 200px">
+        {% endif %}
+    </div>
+
+    <div style="display: flex; gap: 50px;">
+        <div style="border: 1px solid; padding: 20px; border-radius: 5px;">
+            <h3>Изменить категорию</h3>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="categories">Категории:</label>
+                    <select id="categories" name="category" style="margin: 10px 0; padding: 5px;">
+                        {% for category in list_categories %}
+                            <option value="{{ category.id }}" {% if category.id == changeable_request.category.id %}selected{% endif %}>
+                                {{ category }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" name="edit_category" style="padding: 8px 16px; border: none; border-radius: 4px;">
+                    Изменить категорию
+                </button>
+            </form>
+        </div>
+
+        <div style="border: 1px solid; padding: 20px; border-radius: 5px;">
+            <h3>Изменить статус</h3>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="status">Статусы:</label>
+                    <select id="status" name="status" style="margin: 10px 0; padding: 5px;">
+                        {% for status in list_status %}
+                            <option value="{{ status.id }}" {% if status.id == changeable_request.status.id %}selected{% endif %}>
+                                {{ status }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" name="edit_status" style="padding: 8px 16px; border: none; border-radius: 4px;">
+                    Изменить статус
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <a href="{% url 'admin_panel' %}" style="padding: 8px 16px; color: white; text-decoration: none; border-radius: 4px;">
+            Вернуться в админ панель
+        </a>
+    </div>
+
+{%endblock%}

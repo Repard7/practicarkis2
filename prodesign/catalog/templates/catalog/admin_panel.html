@@ -1,0 +1,35 @@
+{% extends 'catalog/base_template.html' %}
+{% block title %} Админ панель {% endblock %}
+{% block content %}
+    {% if all_request_list %}
+    <h1>Все заявки:</h1>
+    <ul style="list-style-type: none">
+        {% for request in all_request_list %}
+                <li style="border-width: 1px; border-color: black; border-style: solid; margin-bottom: 20px">
+                    {% if request.title %}
+                        <p>Название: {{ request.title }}</p>
+                    {% endif %}
+                    {% if request.description %}
+                        <p>Описание: {{ request.description }}</p>
+                    {% endif %}
+                    {% if request.image %}
+                        <p>Дизайн:</p>
+                        <img src="{{ request.image.url }}" alt="Изображение поста" style="height: 200px; width: 200px" >
+                    {% endif %}
+                    {% if request.category %}
+                        <p>Категория: {{ request.category }}</p>
+                    {% endif %} 
+                    {% if request.status %}
+                        <p>Статус: {{ request.status }}</p>
+                    {% endif %}
+                    <a href="{% url 'edit_request' request.pk %}">Редактировать</a>
+                    <a href="{% url 'delete' request.pk %}">Удалить</a>
+                </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>
+            У вас нет заявок!
+        </p>
+    {% endif %}
+{% endblock %}
