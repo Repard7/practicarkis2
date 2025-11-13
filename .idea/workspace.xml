@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Перенес все формы в forms.py">
-      <change afterPath="$PROJECT_DIR$/prodesign/catalog/static/css/style.css" afterDir="false" />
+    <list default="true" id="f516a794-0d77-4c10-a193-eb86cd64dce2" name="Changes" comment="Добавил профиль и изменил ссылку на admin_panel по тз на superadmin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/base_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/base_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/create_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/create_request.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/prodesign/catalog/templates/catalog/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +16,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -95,7 +90,7 @@
       <workItem from="1762963430855" duration="3113000" />
       <workItem from="1762966671526" duration="4237000" />
       <workItem from="1763002086042" duration="894000" />
-      <workItem from="1763003002756" duration="22938000" />
+      <workItem from="1763003002756" duration="23751000" />
     </task>
     <task id="LOCAL-00001" summary="Базовый коммит">
       <option name="closed" value="true" />
@@ -145,7 +140,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763027602331</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Подтянул стили">
+      <option name="closed" value="true" />
+      <created>1763029217094</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763029217094</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Добавил профиль и изменил ссылку на admin_panel по тз на superadmin">
+      <option name="closed" value="true" />
+      <created>1763029544012</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763029544012</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +180,8 @@
     <MESSAGE value="Сделал механику подтверждения удаления" />
     <MESSAGE value="Сделал механику проверки расширения и размера изображений" />
     <MESSAGE value="Перенес все формы в forms.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Перенес все формы в forms.py" />
+    <MESSAGE value="Подтянул стили" />
+    <MESSAGE value="Добавил профиль и изменил ссылку на admin_panel по тз на superadmin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил профиль и изменил ссылку на admin_panel по тз на superadmin" />
   </component>
 </project>

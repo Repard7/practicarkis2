@@ -2,7 +2,9 @@
 {% block title %} Главная {% endblock %}
 {% block content %}
     <h1>Последние четыре выполненные заявки</h1>
-
+    <div style="background: #e9ecef; padding: 15px; border-radius: 5px;">
+        <strong>Заявок в работе: {{ requests_in_work_count }}</strong>
+    </div>
     {% if latest_completed_request_list %}
     <ul style="list-style-type: none; padding: 0;">
         {% for request in latest_completed_request_list %}
